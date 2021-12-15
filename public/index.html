@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>My Chat</title>
+    
+    <style>
+      th.item {
+        text-align: left;
+        padding-left: 2%;
+        width: 30%;
+        background-color: #eee;
+      }
+      td.body {
+        padding: 1%;
+        border: 1px solid #ccc;
+      }
+      
+      input,textarea {
+        resize: vertical;
+        width: 90%;
+        height: 100%;
+      }
+    </style>
+
+  </head>
+  <body>
+    <h1>My Chat</h1>
+    <form action="">
+      <table class="table">
+        <tr>
+          <th class="item">なまえ</th>
+          <td class="body">
+            <input id="nickname" autocomplete="nickname"></input>
+          </td>
+        </tr>
+        <tr>
+          <th class="item">メッセージ</th>
+          <td class="body">
+            <textarea id="input_message" autocomplete="off"></textarea>
+          </td>
+        </tr>
+      </table>
+      <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-outline-primary btn-lg">Send</button>
+      </div>
+    </form>
+
+    <table class="table table-primary mb-0 pb-0">
+    <tr class="fw-bold">
+        <td style='width:15%'>DATE</td>
+        <td style='width:15%'>NICKNAME</td>
+        <td style='width:70%'>MESSAGE</td>
+    </tr>
+    </table>
+    <table class="table table-striped" id="message_list">
+        <tr class="fw-bold">
+            <td style='width:15%'>DATE</td>
+            <td style='width:15%'>NICKNAME</td>
+            <td style='width:70%'>MESSAGE</td>
+        </tr>
+    </table>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="client.js"></script>
+  </body>
+</html>
